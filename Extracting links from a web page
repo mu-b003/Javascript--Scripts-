@@ -1,0 +1,6 @@
+const axios = require('axios');
+async function getLinks(url) {
+    const { data } = await axios.get(url);
+    const links = data.match(/href="([^"]*)"/g);
+    console.log(links);
+}
