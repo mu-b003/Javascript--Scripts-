@@ -1,0 +1,6 @@
+const fs = require('fs');
+const logData = fs.readFileSync('access.log', 'utf8');
+const ipRegex = /\b(?:\d{1,3}\.){3}\d{1,3}\b/g;
+const ips = logData.match(ipRegex);
+
+console.log("IPs Found:", [...new Set(ips)]); // عرض العناوين بدون تكرار
