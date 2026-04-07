@@ -1,0 +1,3 @@
+const data = "Sensitive User Data";
+const encoded = Buffer.from(data).toString('base64');
+console.log("Encoded Data:", encoded);
