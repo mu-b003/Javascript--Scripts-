@@ -1,0 +1,7 @@
+const failedLogins = {};
+function monitorLogin(ip) {
+    failedLogins[ip] = (failedLogins[ip] || 0) + 1;
+    if (failedLogins[ip] > 5) {
+        console.log(`[ALERT] محاولة اختراق محتملة من IP: ${ip}`);
+    }
+}
