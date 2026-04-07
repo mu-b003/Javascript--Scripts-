@@ -1,0 +1,6 @@
+const fs = require('fs');
+const target = 'config.json';
+
+fs.watchFile(target, (curr, prev) => {
+    console.log(`[!] تنبيه: تم تعديل الملف ${target} في: ${curr.mtime}`);
+});
