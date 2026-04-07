@@ -1,0 +1,5 @@
+function defangURL(url) {
+    return url.replace(/\./g, "[.]").replace(/http/gi, "hxxp");
+}
+console.log(defangURL("http://malicious-site.com")); 
+// الناتج: hxxp://malicious-site[.]com
