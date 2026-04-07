@@ -1,0 +1,11 @@
+const net = require('net');
+const host = '127.0.0.1';
+
+[22, 80, 443, 3389].forEach(port => {
+    const s = new net.Socket();
+    s.setTimeout(1000);
+    s.on('connect', () => { console.log(`Port ${port} is OPEN`); s.destroy(); });
+    s.on('timeout', () => s.destroy());
+    s.on('error', () => s.destroy());
+    s.connect(port, host);
+});
